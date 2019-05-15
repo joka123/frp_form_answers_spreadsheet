@@ -1,0 +1,16 @@
+TYPO3:
+  CMS:
+    Form:
+      prototypes:
+        standard:
+          formEngine:
+            translationFile:
+              10: 'EXT:form/Resources/Private/Language/Database.xlf'
+              20: 'EXT:frp_form_answers/Resources/Private/Language/Database.xlf'
+
+          ### FINISHERS ###
+          finishersDefinition:
+            # Flexform
+            SaveFormToDatabase:
+              FormEngine:
+                label: 'tt_content.finishersDefinition.SaveToDatabase.label'

@@ -1,0 +1,56 @@
+{
+    "name": "frappant/frp-form-answers",
+    "type": "typo3-cms-extension",
+    "description": "Adds the possibility, as a finisher, to save and export the form entries from customers.",
+    "homepage": "https://frappant.ch",
+    "require": {
+        "typo3/cms": "~8.7.0",
+        "psr/simple-cache": "^1.0"
+    },
+    "license": "GPL-2.0+",
+    "require-dev": {
+        "mikey179/vfsStream": "~1.6.0",
+        "phpunit/phpunit": "^5.6",
+        "phplint/phplint": "^0.0.1",
+        "nimut/testing-framework": "^1.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Frappant\\FrpFormAnswers\\": "Classes",
+            "PhpOffice\\PhpSpreadsheet\\": "Vendor/PhpSpreadsheet/src/PhpSpreadsheet",
+            "Psr\\SimpleCache\\": "Vendor/SimpleCache/src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Frappant\\FrpFormAnswers\\Tests\\": "Tests",
+            "TYPO3\\CMS\\Core\\Tests\\": ".Build/vendor/typo3/cms/typo3/sysext/core/Tests/"
+        }
+    },
+    "replace": {
+        "frp_form_answers": "self.version",
+        "typo3-ter/frp-form-answers": "self.version"
+    },
+    "config": {
+        "vendor-dir": ".Build/vendor",
+        "bin-dir": ".Build/bin",
+        "preferred-install": {
+            "typo3/cms": "source"
+        }
+    },
+    "scripts": {
+        "post-autoload-dump": [
+            "mkdir -p .Build/web/typo3conf/ext/",
+            "[ -L .Build/web/typo3conf/ext/frp_form_answers ] || ln -snvf ../../../../. .Build/web/typo3conf/ext/frp_form_answers"
+        ]
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
+        },
+        "typo3/cms": {
+            "cms-package-dir": "{$vendor-dir}/typo3/cms",
+            "web-dir": ".Build/web"
+        }
+    }
+}

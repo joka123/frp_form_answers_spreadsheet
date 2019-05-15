@@ -1,0 +1,41 @@
+TYPO3:
+  CMS:
+    Form:
+      ########### FORM MANAGER CONFIGURATION ###########
+      formManager:
+        translationFile:
+          100: 'EXT:form/Resources/Private/Language/Database.xlf'
+          200: 'EXT:frp_form_answers/Resources/Private/Language/database.xlf'
+      ########### FORMEDITOR CONFIGURATION ###########
+      prototypes:
+        standard:
+          formEditor:
+            translationFile:
+              100: 'EXT:form/Resources/Private/Language/Database.xlf'
+              200: 'EXT:frp_form_answers/Resources/Private/Language/database.xlf'
+          ########### DEFAULT FORM ELEMENT DEFINITIONS ###########
+          formElementsDefinition:
+            Form:
+              formEditor:
+                iconIdentifier: 'content-elements-mailform'
+                editors:
+                  900:
+                    selectOptions:
+                      1491637029:
+                        value: 'SaveFormToDatabase'
+                        iconIdentifier: 't3-form-icon-finisher'
+                        label: 'formEditor.elements.Form.editor.finishers.SaveToDatabase.label'
+                propertyCollections:
+                  finishers:
+                    1491637029:
+                      identifier: 'SaveFormToDatabase'
+                      editors:
+                        __inheritances:
+                          10: 'TYPO3.CMS.Form.mixins.formElementMixins.BaseCollectionEditorsMixin'
+                        100:
+                          label: 'formEditor.elements.Form.finisher.SaveToDatabase.editor.header.label'
+          finishersDefinition:
+            SaveFormToDatabase:
+              formEditor:
+                iconIdentifier: 't3-form-icon-finisher'
+
